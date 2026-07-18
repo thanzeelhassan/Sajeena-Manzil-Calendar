@@ -34,7 +34,7 @@ const BIRTHDAYS = [
 
 const ANNIVERSARIES = [
   {
-    couple: "Hassan Koya and Sulaika Beeva",
+    couple: "Hassan Koya and Sulaika Beevi",
     month: 5,
     day: 30,
     year: 1967,
