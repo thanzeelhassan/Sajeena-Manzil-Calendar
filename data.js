@@ -65,7 +65,7 @@ const BIRTHDAYS = [
   {
     "name": "Ahsan Nizar",
     "month": 8,
-    "day": 25
+    "day": 26
   },
   {
     "name": "Fathima Navas",
