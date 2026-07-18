@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,14 @@
   <!-- Google Fonts Outfit & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
+
 <body>
   <script>
     // Apply immediate theme class to avoid flash before render
@@ -20,9 +24,9 @@
       document.body.classList.add('dark');
     }
   </script>
-  
+
   <div class="stars-container"></div>
-  
+
   <div class="app-container">
     <!-- Header Hero -->
     <header class="hero-header">
@@ -35,14 +39,14 @@
           <p class="subtitle">Family Calendar & Chronicles</p>
         </div>
       </div>
-      
+
       <!-- Header Actions (Theme Toggle & Countdown Card) -->
       <div class="header-actions">
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme">
           <i data-lucide="sun" class="sun-icon"></i>
           <i data-lucide="moon" class="moon-icon"></i>
         </button>
-        
+
         <div id="quick-countdown-card" class="quick-countdown-card empty">
           <div class="countdown-loading">
             <span class="pulse-indicator"></span> Loading next family event...
@@ -84,7 +88,7 @@
           <i data-lucide="x"></i>
         </button>
       </div>
-      
+
       <div class="month-filters">
         <button class="filter-btn active" data-month="all">All</button>
         <button class="filter-btn" data-month="0">Jan</button>
@@ -104,7 +108,7 @@
 
     <!-- Tab View Panel Contents -->
     <main class="tabs-container">
-      
+
       <!-- Tab 1: Upcoming Events -->
       <section class="tab-content active" id="tab-upcoming">
         <div class="section-title">
@@ -159,7 +163,7 @@
               <i data-lucide="chevron-right"></i>
             </button>
           </div>
-          
+
           <div class="calendar-weekdays">
             <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
           </div>
@@ -167,7 +171,7 @@
             <!-- Dynamically generated days -->
           </div>
         </div>
-        
+
         <div class="calendar-details-panel">
           <h4>Events in <span id="calendar-focused-month">July</span></h4>
           <div id="calendar-focused-events" class="focused-events-list">
@@ -185,13 +189,14 @@
           </div>
           <div class="info-alert">
             <i data-lucide="info" class="info-icon"></i>
-            <span>Structure shown below handles current records. Details on full relational mappings can be updated later!</span>
+            <span>Structure shown below handles current records. Details on full relational mappings can be updated
+              later!</span>
           </div>
         </div>
-        
+
         <div class="tree-viewport">
           <div class="tree-container">
-            
+
             <!-- Generation 1 -->
             <div class="tree-level level-1">
               <div class="level-indicator">1st Generation (Grandparents)</div>
@@ -218,7 +223,7 @@
             <div class="tree-level level-2">
               <div class="level-indicator">2nd Generation (Children & Spouses)</div>
               <div class="nodes-row flex-wrap">
-                
+
                 <!-- Safeer & Shani -->
                 <div class="couple-card">
                   <div class="node male">
@@ -309,7 +314,7 @@
             <div class="tree-level level-3">
               <div class="level-indicator">3rd Generation (Grandchildren & Couples)</div>
               <div class="nodes-row flex-wrap">
-                
+
                 <!-- Couple: Samru & Farsana -->
                 <div class="couple-card">
                   <div class="node male">
@@ -434,6 +439,7 @@
 
   <!-- Scripts -->
   <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
+
 </html>
