@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sajeena Manzil Family Calendar</title>
+  <!-- Google Fonts Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="stars-container"></div>
+  
+  <div class="app-container">
+    <!-- Header Hero -->
+    <header class="hero-header">
+      <div class="brand">
+        <div class="logo-ring">
+          <i data-lucide="hearts" class="heart-icon"></i>
+        </div>
+        <div>
+          <h1>Sajeena Manzil</h1>
+          <p class="subtitle">Family Calendar & Chronicles</p>
+        </div>
+      </div>
+      
+      <!-- Quick Countdown Banner -->
+      <div id="quick-countdown-card" class="quick-countdown-card empty">
+        <div class="countdown-loading">
+          <span class="pulse-indicator"></span> Loading next family event...
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="upcoming">
+        <i data-lucide="sparkles"></i>
+        <span>Upcoming Events</span>
+      </button>
+      <button class="tab-btn" data-tab="birthdays">
+        <i data-lucide="cake"></i>
+        <span>Birthdays</span>
+      </button>
+      <button class="tab-btn" data-tab="anniversaries">
+        <i data-lucide="heart"></i>
+        <span>Anniversaries</span>
+      </button>
+      <button class="tab-btn" data-tab="calendar">
+        <i data-lucide="calendar"></i>
+        <span>Event Calendar</span>
+      </button>
+      <button class="tab-btn" data-tab="tree">
+        <i data-lucide="git-merge" class="rotate-90"></i>
+        <span>Family Tree</span>
+      </button>
+    </nav>
+
+    <!-- Controls Pane (Search & Month Filter) -->
+    <div class="controls-panel" id="controls-panel">
+      <div class="search-box">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" id="name-search" placeholder="Search by name...">
+        <button id="clear-search" class="clear-btn" style="display: none;">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      
+      <div class="month-filters">
+        <button class="filter-btn active" data-month="all">All</button>
+        <button class="filter-btn" data-month="0">Jan</button>
+        <button class="filter-btn" data-month="1">Feb</button>
+        <button class="filter-btn" data-month="2">Mar</button>
+        <button class="filter-btn" data-month="3">Apr</button>
+        <button class="filter-btn" data-month="4">May</button>
+        <button class="filter-btn" data-month="5">Jun</button>
+        <button class="filter-btn" data-month="6">Jul</button>
+        <button class="filter-btn" data-month="7">Aug</button>
+        <button class="filter-btn" data-month="8">Sep</button>
+        <button class="filter-btn" data-month="9">Oct</button>
+        <button class="filter-btn" data-month="10">Nov</button>
+        <button class="filter-btn" data-month="11">Dec</button>
+      </div>
+    </div>
+
+    <!-- Tab View Panel Contents -->
+    <main class="tabs-container">
+      
+      <!-- Tab 1: Upcoming Events -->
+      <section class="tab-content active" id="tab-upcoming">
+        <div class="section-title">
+          <div class="title-details">
+            <h2>Next 30 Days</h2>
+            <p>Upcoming celebrations and milestones</p>
+          </div>
+          <span class="badge" id="upcoming-count">0 events</span>
+        </div>
+        <div id="upcoming-events-list" class="events-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- Tab 2: Birthdays List -->
+      <section class="tab-content" id="tab-birthdays">
+        <div class="section-title">
+          <div class="title-details">
+            <h2>Family Birthdays</h2>
+            <p>List of all births in the family tree</p>
+          </div>
+          <span class="badge bd-badge" id="birthdays-count">0 Birthdays</span>
+        </div>
+        <div id="birthdays-list" class="events-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- Tab 3: Anniversaries List -->
+      <section class="tab-content" id="tab-anniversaries">
+        <div class="section-title">
+          <div class="title-details">
+            <h2>Wedding Anniversaries</h2>
+            <p>Celebrating the bonds of love across generations</p>
+          </div>
+          <span class="badge ann-badge" id="anniversaries-count">0 Anniversaries</span>
+        </div>
+        <div id="anniversaries-list" class="events-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- Tab 4: Interactive Monthly Grid Calendar -->
+      <section class="tab-content" id="tab-calendar">
+        <div class="calendar-wrapper">
+          <div class="calendar-header">
+            <button id="prev-month" class="nav-month-btn">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <h3 id="current-calendar-month-year">July 2026</h3>
+            <button id="next-month" class="nav-month-btn">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+          
+          <div class="calendar-weekdays">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+          <div id="calendar-days-grid" class="calendar-days">
+            <!-- Dynamically generated days -->
+          </div>
+        </div>
+        
+        <div class="calendar-details-panel">
+          <h4>Events in <span id="calendar-focused-month">July</span></h4>
+          <div id="calendar-focused-events" class="focused-events-list">
+            <!-- Dynamically generated list -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 5: Family Tree -->
+      <section class="tab-content" id="tab-tree">
+        <div class="section-title">
+          <div class="title-details">
+            <h2>Sajeena Manzil Family Tree</h2>
+            <p>Visualizing generations and relationships</p>
+          </div>
+          <div class="info-alert">
+            <i data-lucide="info" class="info-icon"></i>
+            <span>Structure shown below handles current records. Details on full relational mappings can be updated later!</span>
+          </div>
+        </div>
+        
+        <div class="tree-viewport">
+          <div class="tree-container">
+            
+            <!-- Generation 1 -->
+            <div class="tree-level level-1">
+              <div class="level-indicator">1st Generation (Grandparents)</div>
+              <div class="nodes-row">
+                <div class="couple-card root-couple">
+                  <div class="node male">
+                    <span class="node-role">Grandfather</span>
+                    <span class="node-name">Hassan Koya</span>
+                    <span class="node-date">Passed June 30th (Anniversary)</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node female">
+                    <span class="node-role">Grandmother</span>
+                    <span class="node-name">Sulaika</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Connector Line -->
+            <div class="tree-branch-line"></div>
+
+            <!-- Generation 2 -->
+            <div class="tree-level level-2">
+              <div class="level-indicator">2nd Generation (Children & Spouses)</div>
+              <div class="nodes-row flex-wrap">
+                
+                <!-- Safeer & Shani -->
+                <div class="couple-card">
+                  <div class="node male">
+                    <span class="node-name">Safeer</span>
+                    <span class="node-date">B: Nov 20</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node female">
+                    <span class="node-name">Shani</span>
+                    <span class="node-date">B: Mar 11</span>
+                  </div>
+                </div>
+
+                <!-- Sameer/Sammer & Nishi -->
+                <div class="couple-card">
+                  <div class="node male">
+                    <span class="node-name">Sameer</span>
+                    <span class="node-date">B: Apr 6</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node female">
+                    <span class="node-name">Nishi</span>
+                    <span class="node-date">B: Jul 27</span>
+                  </div>
+                </div>
+
+                <!-- Sajeena & Kalam -->
+                <div class="couple-card highlight-card">
+                  <div class="node female">
+                    <span class="node-role">Sajeena Manzil</span>
+                    <span class="node-name">Sajeena</span>
+                    <span class="node-date">B: June 16 (Itha)</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node male">
+                    <span class="node-role">Muthappa</span>
+                    <span class="node-name">Kalam</span>
+                    <span class="node-date">B: June 8</span>
+                  </div>
+                </div>
+
+                <!-- Haseena & Hamsa -->
+                <div class="couple-card">
+                  <div class="node female">
+                    <span class="node-name">Haseena</span>
+                    <span class="node-date">B: Nov 27</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node male">
+                    <span class="node-name">Hamsa</span>
+                    <span class="node-date">B: Oct 11</span>
+                  </div>
+                </div>
+
+                <!-- Sophi & Nizar -->
+                <div class="couple-card">
+                  <div class="node female">
+                    <span class="node-name">Sophy</span>
+                    <span class="node-date">B: Apr 16</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node male">
+                    <span class="node-name">Nizar</span>
+                    <span class="node-date">B: Feb 13</span>
+                  </div>
+                </div>
+
+                <!-- Nizar & Muhsina -->
+                <div class="couple-card">
+                  <div class="node male">
+                    <span class="node-name">Nizar</span>
+                    <span class="node-date">B: Sep 7</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node female">
+                    <span class="node-name">Muhsina</span>
+                    <span class="node-date">B: May 14</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Connector Line -->
+            <div class="tree-branch-line"></div>
+
+            <!-- Generation 3 -->
+            <div class="tree-level level-3">
+              <div class="level-indicator">3rd Generation (Grandchildren & Couples)</div>
+              <div class="nodes-row flex-wrap">
+                
+                <!-- Couple: Samru & Farsana -->
+                <div class="couple-card">
+                  <div class="node male">
+                    <span class="node-role">Grandchild</span>
+                    <span class="node-name">Samru</span>
+                    <span class="node-date">B: May 8</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="ring"></i></div>
+                  <div class="node female">
+                    <span class="node-role">Spouse</span>
+                    <span class="node-name">Farsana</span>
+                    <span class="node-date">M: July 26, 2026</span>
+                  </div>
+                </div>
+
+                <!-- Couple: Ahsan & Fathima -->
+                <div class="couple-card">
+                  <div class="node male">
+                    <span class="node-role">Grandchild</span>
+                    <span class="node-name">Ahsan</span>
+                    <span class="node-date">B: Sep 25</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node female">
+                    <span class="node-role">Spouse</span>
+                    <span class="node-name">Fathima</span>
+                    <span class="node-date">B: July 2</span>
+                  </div>
+                </div>
+
+                <!-- Couple: Fathima (Shaheen's wife) & Shaheen -->
+                <div class="couple-card">
+                  <div class="node female">
+                    <span class="node-role">Grandchild</span>
+                    <span class="node-name">Fathima</span>
+                    <span class="node-date">M: July (Shaheen)</span>
+                  </div>
+                  <div class="couple-heart"><i data-lucide="heart"></i></div>
+                  <div class="node male">
+                    <span class="node-role">Spouse</span>
+                    <span class="node-name">Shaheen</span>
+                  </div>
+                </div>
+
+                <!-- Unmarried/Single Grandchildren -->
+                <div class="single-nodes-group">
+                  <span class="group-label">Grandchildren & Kids</span>
+                  <div class="single-nodes-row">
+                    <div class="node children-node">
+                      <span class="node-name">Thanzi</span>
+                      <span class="node-date">Jan 16</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Fathi</span>
+                      <span class="node-date">May 4</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Mahra</span>
+                      <span class="node-date">Aug 18</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Alia</span>
+                      <span class="node-date">Aug 14</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Abid</span>
+                      <span class="node-date">Sep 12</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Saad</span>
+                      <span class="node-date">Aug 24</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Salih</span>
+                      <span class="node-date">May 2</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Fadhil</span>
+                      <span class="node-date">Apr 23</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Faiha</span>
+                      <span class="node-date">Jul 19</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Faheem</span>
+                      <span class="node-date">Apr 24</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Ihsan</span>
+                      <span class="node-date">Dec 12</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Ifa</span>
+                      <span class="node-date">Oct 2</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Isha</span>
+                      <span class="node-date">Jan 6, 2018</span>
+                    </div>
+                    <div class="node children-node">
+                      <span class="node-name">Imran</span>
+                      <span class="node-date">Dec 2, 2019</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <p>© 2026 Sajeena Manzil Family Calendar. Made with love for the family.</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
