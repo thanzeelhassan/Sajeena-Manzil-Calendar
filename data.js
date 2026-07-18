@@ -30,7 +30,7 @@ const BIRTHDAYS = [
   },
   {
     "name": "Hamsa Vellerkodath Bava",
-    "month": 9,
+    "month": 10,
     "day": 11,
     "year": 1969
   },
