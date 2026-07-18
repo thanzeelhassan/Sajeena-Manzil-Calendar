@@ -91,7 +91,7 @@ const BIRTHDAYS = [
   {
     "name": "Shani Safeer",
     "month": 2,
-    "day": 11
+    "day": 12
   },
   {
     "name": "Saad Safeer",
