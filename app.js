@@ -374,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else if (ageNum === 0) {
                     milestoneSub = "Wedding Day! 💍";
                 } else {
-                    milestoneSub = `Celebrating ${getOrdinalIndicator(ageNum)}`;
+                    milestoneSub = `Celebrating ${getOrdinalIndicator(ageNum)} Wedding Anniversary`;
                 }
             }
         } else {

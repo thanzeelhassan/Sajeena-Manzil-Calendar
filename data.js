@@ -38,7 +38,6 @@ const ANNIVERSARIES = [
     month: 5,
     day: 30,
     year: 1967,
-    note: "50th wedding anniversary in 2017",
     generation: 1
   },
   {
@@ -46,7 +45,6 @@ const ANNIVERSARIES = [
     month: 8,
     day: 29,
     year: 1992,
-    note: "25th anniversary in 2017",
     generation: 2
   },
   {
