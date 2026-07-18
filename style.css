@@ -1105,6 +1105,42 @@ body::after {
   font-size: 0.85rem;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.footer-link:hover {
+  color: var(--primary-gold);
+}
+
+.footer-link i {
+  width: 14px;
+  height: 14px;
+}
+
+.main-footer .divider {
+  color: var(--text-muted);
+  opacity: 0.3;
+}
+
+.main-footer .author-label {
+  color: var(--text-muted);
+}
+
 /* Theme Toggle Button Styles */
 .theme-toggle-btn {
   background: var(--panel-bg);
