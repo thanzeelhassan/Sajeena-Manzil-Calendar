@@ -14,7 +14,7 @@ const BIRTHDAYS = [
     "year": 1969
   },
   {
-    "name": "Fathima Abdul Kalam",
+    "name": "Fatima Abdul Kalam",
     "month": 4,
     "day": 4
   },
@@ -210,7 +210,7 @@ const ANNIVERSARIES = [
     "generation": 2
   },
   {
-    "couple": "Fathima Abdul Kalam and Shaheen Sudheer",
+    "couple": "Fatima Abdul Kalam and Shaheen Sudheer",
     "month": 6,
     "day": 9,
     "generation": 3,

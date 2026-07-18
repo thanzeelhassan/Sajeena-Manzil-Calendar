@@ -75,7 +75,7 @@ function parseAnniversaries() {
         "Safeer and Shani": "Safeer Hassan Koya and Shani Safeer",
         "Sammer and Nishi": "Sameer Hassan Koya and Nishi Sameer",
         "Nizar and Muhsina": "Nizar Hassan Koya and Muhsina Nizar",
-        "Fathima and Shaheen": "Fathima Abdul Kalam and Shaheen Sudheer",
+        "Fatima and Shaheen": "Fatima Abdul Kalam and Shaheen Sudheer",
         "Ahsan and Fathima": "Ahsan Nizar and Fathima Navas",
         "Samru and Farsana": "Mohammad Samroud and Farsana"
     };
