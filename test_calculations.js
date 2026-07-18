@@ -56,7 +56,7 @@ if (sajeenaKalam) {
 }
 
 // Test 3: Check countdown to Samru & Farsana's upcoming wedding (July 26, 2026)
-const samruFarsana = ANNIVERSARIES.find(a => a.couple === "Mohammad Samroud and Farsana");
+const samruFarsana = ANNIVERSARIES.find(a => a.couple === "Mohamed Samroud and Farsana");
 if (samruFarsana) {
     const days = getDaysCount(samruFarsana.month, samruFarsana.day);
     const years = getCalculatedYears(samruFarsana);

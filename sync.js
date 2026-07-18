@@ -77,7 +77,7 @@ function parseAnniversaries() {
         "Nizar and Muhsina": "Nizar Hassan Koya and Muhsina Nizar",
         "Fatima and Shaheen": "Fatima Abdul Kalam and Shaheen Sudheer",
         "Ahsan and Fathima": "Ahsan Nizar and Fathima Navas",
-        "Samru and Farsana": "Mohammad Samroud and Farsana"
+        "Samru and Farsana": "Mohamed Samroud and Farsana"
     };
 
     let currentGeneration = 1;

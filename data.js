@@ -24,7 +24,7 @@ const BIRTHDAYS = [
     "day": 5
   },
   {
-    "name": "Mohammad Samroud",
+    "name": "Mohamed Samroud",
     "month": 4,
     "day": 8
   },
@@ -224,7 +224,7 @@ const ANNIVERSARIES = [
     "year": 2024
   },
   {
-    "couple": "Mohammad Samroud and Farsana",
+    "couple": "Mohamed Samroud and Farsana",
     "month": 6,
     "day": 26,
     "generation": 3,
