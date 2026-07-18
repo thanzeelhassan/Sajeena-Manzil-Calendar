@@ -13,6 +13,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script>
+    // Apply immediate theme class to avoid flash before render
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+  </script>
   
   <div class="stars-container"></div>
   
@@ -29,10 +36,17 @@
         </div>
       </div>
       
-      <!-- Quick Countdown Banner -->
-      <div id="quick-countdown-card" class="quick-countdown-card empty">
-        <div class="countdown-loading">
-          <span class="pulse-indicator"></span> Loading next family event...
+      <!-- Header Actions (Theme Toggle & Countdown Card) -->
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme">
+          <i data-lucide="sun" class="sun-icon"></i>
+          <i data-lucide="moon" class="moon-icon"></i>
+        </button>
+        
+        <div id="quick-countdown-card" class="quick-countdown-card empty">
+          <div class="countdown-loading">
+            <span class="pulse-indicator"></span> Loading next family event...
+          </div>
         </div>
       </div>
     </header>

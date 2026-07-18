@@ -657,6 +657,17 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCalendar();
     });
 
+
+    // --- Theme Toggle Logic ---
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            const isDark = document.body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+    }
+
     // --- Initial Startup Callouts ---
 
     // Set initial display view: Panel controls are hidden by default as 'upcoming' is first
