@@ -39,7 +39,7 @@ console.log(`Current Mock Time: ${systemDate.toString()}`);
 console.log(`Current Mock Clean Date: ${clearTime(systemDate).toString()}\n`);
 
 // Test 1: Check countdown to tomorrow's birthday (Faiha - July 19)
-const faiha = BIRTHDAYS.find(b => b.name === "Faiha");
+const faiha = BIRTHDAYS.find(b => b.name === "Faiha Sameer");
 if (faiha) {
     const days = getDaysCount(faiha.month, faiha.day);
     console.log(`Test Faiha (July 19): countdown days = ${days} (Expected: 1)`);
@@ -47,7 +47,7 @@ if (faiha) {
 }
 
 // Test 2: Check countdown to Sajeena & Kalam's anniversary (Sep 29th 1992)
-const sajeenaKalam = ANNIVERSARIES.find(a => a.couple === "Sajeena and Kalam");
+const sajeenaKalam = ANNIVERSARIES.find(a => a.couple === "Sajeena Abdul Kalam and Abdul Kalam");
 if (sajeenaKalam) {
     const days = getDaysCount(sajeenaKalam.month, sajeenaKalam.day);
     const years = getCalculatedYears(sajeenaKalam);
@@ -56,7 +56,7 @@ if (sajeenaKalam) {
 }
 
 // Test 3: Check countdown to Samru & Farsana's upcoming wedding (July 26, 2026)
-const samruFarsana = ANNIVERSARIES.find(a => a.couple === "Samru and Farsana");
+const samruFarsana = ANNIVERSARIES.find(a => a.couple === "Mohammad Samroud and Farsana");
 if (samruFarsana) {
     const days = getDaysCount(samruFarsana.month, samruFarsana.day);
     const years = getCalculatedYears(samruFarsana);
@@ -65,7 +65,7 @@ if (samruFarsana) {
 }
 
 // Test 4: Check anniversary of Hassan Koya & Sulaika (June 30 1967) - has already passed this year (June 30, 2026)
-const hassanSulaika = ANNIVERSARIES.find(a => a.couple === "Hassan Koya and Sulaika");
+const hassanSulaika = ANNIVERSARIES.find(a => a.couple === "Hassan Koya and Sulaika Beeva");
 if (hassanSulaika) {
     const days = getDaysCount(hassanSulaika.month, hassanSulaika.day);
     const years = getCalculatedYears(hassanSulaika);
@@ -74,7 +74,7 @@ if (hassanSulaika) {
 }
 
 // Test 5: Check birthday of Isha (Jan 6 2018) - has already passed this year (Jan 6 2026)
-const isha = BIRTHDAYS.find(b => b.name === "Isha");
+const isha = BIRTHDAYS.find(b => b.name === "Isha Nizar");
 if (isha) {
     const days = getDaysCount(isha.month, isha.day);
     const age = getCalculatedYears(isha);
