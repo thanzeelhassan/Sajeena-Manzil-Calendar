@@ -171,11 +171,22 @@ document.addEventListener("DOMContentLoaded", () => {
             iconHTML = `<div class="icon-holder anniversary"><i data-lucide="heart"></i></div>`;
             const yearsNum = getCalculatedYears(nextEvent);
             let yearsString = "";
+            let titleText = "Next Anniversary";
             if (yearsNum !== null) {
-                yearsString = yearsNum === 0 ? "(Wedding day!)" : `(${getOrdinalIndicator(yearsNum)} Anniversary)`;
+                const today = clearTime(systemDate);
+                const eventDateThisYear = new Date(nextEvent.year, nextEvent.month, nextEvent.day);
+                if (yearsNum === 0 && today < eventDateThisYear) {
+                    yearsString = "(Upcoming Wedding!)";
+                    titleText = "Upcoming Wedding";
+                } else if (yearsNum === 0) {
+                    yearsString = "(Wedding Day!)";
+                    titleText = "Wedding Day";
+                } else {
+                    yearsString = `(${getOrdinalIndicator(yearsNum)} Anniversary)`;
+                }
             }
             descHTML = `
-        <div class="title">Next Anniversary</div>
+        <div class="title">${titleText}</div>
         <div class="detail">${nextEvent.displayName} ${yearsString}</div>
       `;
         }
@@ -356,7 +367,15 @@ document.addEventListener("DOMContentLoaded", () => {
             if (event.type === "birthday") {
                 milestoneSub = `Turning ${getOrdinalIndicator(ageNum)}`;
             } else {
-                milestoneSub = ageNum === 0 ? "Celebrating Wedding Day!" : `Celebrating ${getOrdinalIndicator(ageNum)}`;
+                const today = clearTime(systemDate);
+                const eventDateThisYear = new Date(event.year, event.month, event.day);
+                if (ageNum === 0 && today < eventDateThisYear) {
+                    milestoneSub = "Upcoming Wedding 💍";
+                } else if (ageNum === 0) {
+                    milestoneSub = "Wedding Day! 💍";
+                } else {
+                    milestoneSub = `Celebrating ${getOrdinalIndicator(ageNum)}`;
+                }
             }
         } else {
             milestoneSub = event.type === "birthday" ? "Birthday Celebration" : "Wedding Anniversary";
