@@ -15,6 +15,7 @@
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #94a3b8;
+  --scrollbar-thumb-color: rgba(15, 23, 42, 0.25);
 
   --font-display: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -61,6 +62,7 @@ body.dark {
   --text-primary: #f3f4f6;
   --text-secondary: #9ca3af;
   --text-muted: #6b7280;
+  --scrollbar-thumb-color: rgba(255, 255, 255, 0.25);
   --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
 
   --hero-heading-gradient: linear-gradient(135deg, #fff 0%, #fbbf24 100%);
@@ -345,7 +347,7 @@ body::after {
   overflow-x: auto;
   padding-bottom: 0.35rem;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  scrollbar-color: var(--scrollbar-thumb-color) transparent;
 }
 
 .month-filters::-webkit-scrollbar {
@@ -353,7 +355,7 @@ body::after {
 }
 
 .month-filters::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--scrollbar-thumb-color);
   border-radius: 2px;
 }
 
@@ -1302,5 +1304,21 @@ body.dark .theme-toggle-btn .moon-icon {
 
   .events-grid {
     grid-template-columns: 1fr;
+  }
+
+  .tab-nav {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-gold) transparent;
+    padding-bottom: 0.5rem;
+  }
+
+  .tab-nav::-webkit-scrollbar {
+    display: block;
+    height: 4px;
+  }
+
+  .tab-nav::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 2px;
   }
 }
