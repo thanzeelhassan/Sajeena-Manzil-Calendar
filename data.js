@@ -161,6 +161,12 @@ const BIRTHDAYS = [
     "month": 11,
     "day": 2,
     "year": 2019
+  },
+  {
+    "name": "Abdullah Ahsan Nizar",
+    "month": 8,
+    "day": 27,
+    "year": 2026
   }
 ];
 
@@ -555,6 +561,15 @@ const FAMILY = [
     "generation": 3,
     "marriedIn": true,
     "spouse": "Mohamed Samroud"
+  },
+  {
+    "name": "Abdullah Ahsan Nizar",
+    "gender": "male",
+    "generation": 4,
+    "parents": [
+      "Ahsan Nizar",
+      "Fathima Navas"
+    ]
   }
 ];
 
