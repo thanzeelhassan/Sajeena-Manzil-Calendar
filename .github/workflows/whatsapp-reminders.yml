@@ -1,0 +1,53 @@
+# Sends family event reminders to your WhatsApp every morning (India time).
+# Setup: add the WHATSAPP_PHONE and CALLMEBOT_APIKEY secrets (see README).
+name: WhatsApp reminders
+
+on:
+  schedule:
+    - cron: "30 1 * * *" # 01:30 UTC = 7:00 AM IST (GitHub may start it a few minutes late)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Pretend today is this date in India (YYYY-MM-DD). Leave empty for today."
+        required: false
+        default: ""
+      dry_run:
+        description: "Only show the messages in the log, don't send them"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: write # lets the keep-alive step below re-enable this schedule
+
+concurrency:
+  group: whatsapp-reminders
+  cancel-in-progress: false
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Send today's reminders
+        run: node notify.js
+        env:
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          NOTIFY_DATE: ${{ inputs.date }}
+          NOTIFY_DRY_RUN: ${{ inputs.dry_run }}
+
+      # GitHub pauses scheduled workflows after 60 days without repo activity.
+      # Re-enabling the workflow on every scheduled run keeps it going.
+      - name: Keep the daily schedule alive
+        if: github.event_name == 'schedule'
+        continue-on-error: true
+        run: gh api --method PUT "repos/${{ github.repository }}/actions/workflows/whatsapp-reminders.yml/enable"
+        env:
+          GH_TOKEN: ${{ github.token }}

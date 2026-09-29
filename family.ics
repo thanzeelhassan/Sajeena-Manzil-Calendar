@@ -1,0 +1,852 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sajeena Manzil//Family Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sajeena Manzil Family
+X-WR-CALDESC:Birthdays and wedding anniversaries of the Sajeena Manzil fami
+ ly
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:birthday-abdul-kalam@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000608
+DTEND;VALUE=DATE:20000609
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Abdul Kalam's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Abdul Kalam's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Abdul Kalam's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-sajeena-abdul-kalam@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19690616
+DTEND;VALUE=DATE:19690617
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Sajeena Abdul Kalam's birthday
+DESCRIPTION:Born 1969. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Sajeena Abdul Kalam's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Sajeena Abdul Kalam's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-fatima-abdul-kalam@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000504
+DTEND;VALUE=DATE:20000505
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Fatima Abdul Kalam's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Fatima Abdul Kalam's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Fatima Abdul Kalam's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-shaheen-sudheer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000605
+DTEND;VALUE=DATE:20000606
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Shaheen Sudheer's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Shaheen Sudheer's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Shaheen Sudheer's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-mohamed-samroud@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000508
+DTEND;VALUE=DATE:20000509
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Mohamed Samroud's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Mohamed Samroud's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Mohamed Samroud's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-hamsa-vellerkodath-bava@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19691111
+DTEND;VALUE=DATE:19691112
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Hamsa Vellerkodath Bava's birthday
+DESCRIPTION:Born 1969. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Hamsa Vellerkodath Bava's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Hamsa Vellerkodath Bava's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-haseena-hassan@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19711127
+DTEND;VALUE=DATE:19711128
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Haseena Hassan's birthday
+DESCRIPTION:Born 1971. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Haseena Hassan's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Haseena Hassan's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-thanzeel-hassan@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000116
+DTEND;VALUE=DATE:20000117
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Thanzeel Hassan's birthday
+DESCRIPTION:Born 2000. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Thanzeel Hassan's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Thanzeel Hassan's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-mahra-hassan-vellerkodath@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20040818
+DTEND;VALUE=DATE:20040819
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Mahra Hassan Vellerkodath's birthday
+DESCRIPTION:Born 2004. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Mahra Hassan Vellerkodath's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Mahra Hassan Vellerkodath's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-abdul-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000213
+DTEND;VALUE=DATE:20000214
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Abdul Nizar's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Abdul Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Abdul Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-sophia-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000416
+DTEND;VALUE=DATE:20000417
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Sophia Nizar's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Sophia Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Sophia Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-ahsan-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000926
+DTEND;VALUE=DATE:20000927
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Ahsan Nizar's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Ahsan Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Ahsan Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-fathima-navas@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20010702
+DTEND;VALUE=DATE:20010703
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Fathima Navas's birthday
+DESCRIPTION:Born 2001. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Fathima Navas's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Fathima Navas's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-alia-abdul-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000814
+DTEND;VALUE=DATE:20000815
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Alia Abdul Nizar's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Alia Abdul Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Alia Abdul Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-abid-abdul-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000912
+DTEND;VALUE=DATE:20000913
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Abid Abdul Nizar's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Abid Abdul Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Abid Abdul Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-safeer-hassan-koya@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20001120
+DTEND;VALUE=DATE:20001121
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Safeer Hassan Koya's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Safeer Hassan Koya's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Safeer Hassan Koya's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-shani-safeer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000312
+DTEND;VALUE=DATE:20000313
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Shani Safeer's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Shani Safeer's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Shani Safeer's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-saad-safeer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000824
+DTEND;VALUE=DATE:20000825
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Saad Safeer's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Saad Safeer's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Saad Safeer's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-salih-safeer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000502
+DTEND;VALUE=DATE:20000503
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Salih Safeer's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Salih Safeer's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Salih Safeer's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-sameer-hassan-koya@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000406
+DTEND;VALUE=DATE:20000407
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Sameer Hassan Koya's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Sameer Hassan Koya's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Sameer Hassan Koya's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-nishi-sameer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000727
+DTEND;VALUE=DATE:20000728
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Nishi Sameer's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Nishi Sameer's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Nishi Sameer's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-fadhil-sameer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000423
+DTEND;VALUE=DATE:20000424
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Fadhil Sameer's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Fadhil Sameer's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Fadhil Sameer's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-faiha-sameer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000719
+DTEND;VALUE=DATE:20000720
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Faiha Sameer's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Faiha Sameer's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Faiha Sameer's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-faheem-sameer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000424
+DTEND;VALUE=DATE:20000425
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Faheem Sameer's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Faheem Sameer's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Faheem Sameer's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-nizar-hassan-koya@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000907
+DTEND;VALUE=DATE:20000908
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Nizar Hassan Koya's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Nizar Hassan Koya's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Nizar Hassan Koya's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-muhsina-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000514
+DTEND;VALUE=DATE:20000515
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Muhsina Nizar's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Muhsina Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Muhsina Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-ihsan-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20121212
+DTEND;VALUE=DATE:20121213
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Ihsan Nizar's birthday
+DESCRIPTION:Born 2012. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Ihsan Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Ihsan Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-ifa-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20001002
+DTEND;VALUE=DATE:20001003
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Ifa Nizar's birthday
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Ifa Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Ifa Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-isha-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20180106
+DTEND;VALUE=DATE:20180107
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Isha Nizar's birthday
+DESCRIPTION:Born 2018. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Isha Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Isha Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-imran-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20191202
+DTEND;VALUE=DATE:20191203
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Imran Nizar's birthday
+DESCRIPTION:Born 2019. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Imran Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Imran Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:birthday-abdullah-ahsan-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260927
+DTEND;VALUE=DATE:20260928
+RRULE:FREQ=YEARLY
+SUMMARY:🎂 Abdullah Ahsan Nizar's birthday
+DESCRIPTION:Born 2026. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
+ ndar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 🎂 Abdullah Ahsan Nizar's birthday
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 🎂 Abdullah Ahsan Nizar's birthday
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-hassan-koya-and-sulaika-beevi@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19670630
+DTEND;VALUE=DATE:19670701
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Hassan Koya & Sulaika Beevi's anniversary
+DESCRIPTION:Married 1967. https://thanzeelhassan.github.io/Sajeena-Manzil-C
+ alendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Hassan Koya & Sulaika Beevi's anniversary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Hassan Koya & Sulaika Beevi's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-sajeena-abdul-kalam-and-abdul-kalam@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19920929
+DTEND;VALUE=DATE:19920930
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Sajeena Abdul Kalam & Abdul Kalam's anniversary
+DESCRIPTION:Married 1992. https://thanzeelhassan.github.io/Sajeena-Manzil-C
+ alendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Sajeena Abdul Kalam & Abdul Kalam's anniversary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Sajeena Abdul Kalam & Abdul Kalam's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-haseena-hassan-and-hamsa-vellerkodath-bava@sajeena-manzil-c
+ alendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19961229
+DTEND;VALUE=DATE:19961230
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Haseena Hassan & Hamsa Vellerkodath Bava's anniversary
+DESCRIPTION:Married 1996. https://thanzeelhassan.github.io/Sajeena-Manzil-C
+ alendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Haseena Hassan & Hamsa Vellerkodath Bava's anniv
+ ersary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Haseena Hassan & Hamsa Vellerkodath Bava's annivers
+ ary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-sophia-nizar-and-abdul-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000214
+DTEND;VALUE=DATE:20000215
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Sophia Nizar & Abdul Nizar's anniversary
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Sophia Nizar & Abdul Nizar's anniversary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Sophia Nizar & Abdul Nizar's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-safeer-hassan-koya-and-shani-safeer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000327
+DTEND;VALUE=DATE:20000328
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Safeer Hassan Koya & Shani Safeer's anniversary
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Safeer Hassan Koya & Shani Safeer's anniversary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Safeer Hassan Koya & Shani Safeer's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-sameer-hassan-koya-and-nishi-sameer@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000713
+DTEND;VALUE=DATE:20000714
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Sameer Hassan Koya & Nishi Sameer's anniversary
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Sameer Hassan Koya & Nishi Sameer's anniversary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Sameer Hassan Koya & Nishi Sameer's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-nizar-hassan-koya-and-muhsina-nizar@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20000703
+DTEND;VALUE=DATE:20000704
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Nizar Hassan Koya & Muhsina Nizar's anniversary
+DESCRIPTION:https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Nizar Hassan Koya & Muhsina Nizar's anniversary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Nizar Hassan Koya & Muhsina Nizar's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-fatima-abdul-kalam-and-shaheen-sudheer@sajeena-manzil-calen
+ dar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20230709
+DTEND;VALUE=DATE:20230710
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Fatima Abdul Kalam & Shaheen Sudheer's anniversary
+DESCRIPTION:Married 2023. https://thanzeelhassan.github.io/Sajeena-Manzil-C
+ alendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Fatima Abdul Kalam & Shaheen Sudheer's anniversa
+ ry
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Fatima Abdul Kalam & Shaheen Sudheer's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-ahsan-nizar-and-fathima-navas@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20240729
+DTEND;VALUE=DATE:20240730
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Ahsan Nizar & Fathima Navas's anniversary
+DESCRIPTION:Married 2024. https://thanzeelhassan.github.io/Sajeena-Manzil-C
+ alendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Ahsan Nizar & Fathima Navas's anniversary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Ahsan Nizar & Fathima Navas's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:anniversary-mohamed-samroud-and-farsana@sajeena-manzil-calendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+SUMMARY:💍 Mohamed Samroud & Farsana's anniversary
+DESCRIPTION:Married 2026. https://thanzeelhassan.github.io/Sajeena-Manzil-C
+ alendar/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 💍 Mohamed Samroud & Farsana's anniversary
+TRIGGER:-PT15H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today: 💍 Mohamed Samroud & Farsana's anniversary
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

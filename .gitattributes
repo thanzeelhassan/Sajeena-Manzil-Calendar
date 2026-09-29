@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Calendar feeds must keep CRLF line endings (RFC 5545)
+*.ics -text

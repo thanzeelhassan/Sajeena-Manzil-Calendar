@@ -111,5 +111,25 @@ check("grandchildren of Sajeena & Kalam",
     FAMILY.filter(m => m.parents && m.parents.includes("Sajeena Abdul Kalam")).map(m => m.name).join(", "),
     "Fatima Abdul Kalam, Mohamed Samroud");
 
+// Test 7: WhatsApp reminders (notify.js) use India dates
+console.log("WhatsApp reminders");
+const { buildMessages, parseISODate, todayInIndia } = require('./notify.js');
+const msgsOn = d => buildMessages(parseISODate(d));
+check("day before Sajeena & Kalam's anniversary sends a reminder",
+    /Reminder: tomorrow, Tue 29 Sep[\s\S]*34th wedding anniversary/.test(msgsOn("2026-09-28").join("\n")), true);
+check("anniversary day sends a forwardable greeting",
+    msgsOn("2026-09-29")[0].startsWith("💍 *Happy 34th Wedding Anniversary, Sajeena Abdul Kalam & Abdul Kalam!*"), true);
+check("no greeting on the day a baby is born", msgsOn("2026-09-27").length, 0);
+check("first birthday a year later", /Happy Birthday, Abdullah Ahsan Nizar[\s\S]*1st birthday/.test(msgsOn("2027-09-27").join("\n")), true);
+check("upcoming wedding is a wedding, not an anniversary", /Congratulations, Mohamed Samroud & Farsana/.test(msgsOn("2026-07-26")[0]), true);
+check("India date used late evening in the US (Sep 29 11pm LA = Sep 30 India)",
+    JSON.stringify(todayInIndia(new Date("2026-09-30T06:00:00Z"))), JSON.stringify({ year: 2026, month: 8, day: 30 }));
+
+// Test 8: calendar feed
+console.log("Calendar feed (family.ics)");
+const ics = require('fs').readFileSync(require('path').join(__dirname, 'family.ics'), 'utf8');
+check("one event per birthday and anniversary", (ics.match(/BEGIN:VEVENT/g) || []).length, BIRTHDAYS.length + ANNIVERSARIES.length);
+check("uses CRLF line endings", ics.includes("\r\n") && !/[^\r]\n/.test(ics), true);
+
 console.log(`\n=== ${passed} passed, ${failed} failed ===`);
 if (failed) process.exitCode = 1;

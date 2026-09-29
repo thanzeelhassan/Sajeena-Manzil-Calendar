@@ -1,6 +1,6 @@
 // sync.js - Synchronize Sajeena Manzil Family Calendar Database
 //
-// Reads the plain-text files in resources/ and regenerates data.js:
+// Reads the plain-text files in resources/ and regenerates data.js and family.ics (the calendar feed):
 //   resources/Members.txt               -> FAMILY        (who is who: gender, generation, parents, spouse)
 //   resources/Birthdays.txt             -> BIRTHDAYS
 //   resources/Wedding_anniversaries.txt -> ANNIVERSARIES
@@ -237,6 +237,98 @@ function parseAnniversaries(family) {
     return anniversaries;
 }
 
+// ---------- family.ics (calendar feed people can subscribe to) ----------
+
+const SITE_URL = 'https://thanzeelhassan.github.io/Sajeena-Manzil-Calendar/';
+
+function icsEscape(text) {
+    return String(text).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+}
+
+// RFC 5545: lines longer than 75 bytes are folded (continuation lines start with a space)
+function icsFold(line) {
+    const out = [];
+    let current = '';
+    let bytes = 0;
+    for (const ch of line) {
+        const len = Buffer.byteLength(ch);
+        if (bytes + len > (out.length ? 74 : 75)) {
+            out.push(current);
+            current = '';
+            bytes = 0;
+        }
+        current += ch;
+        bytes += len;
+    }
+    out.push(current);
+    return out.join('\r\n ');
+}
+
+function icsDate(year, month, day) {
+    return `${year}${String(month + 1).padStart(2, '0')}${String(day).padStart(2, '0')}`;
+}
+
+function slug(text) {
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function icsEvent({ uid, summary, description, event }) {
+    const start = icsDate(event.year || 2000, event.month, event.day);
+    const next = new Date(Date.UTC(event.year || 2000, event.month, event.day + 1));
+    const end = icsDate(next.getUTCFullYear(), next.getUTCMonth(), next.getUTCDate());
+    return [
+        'BEGIN:VEVENT',
+        `UID:${uid}@sajeena-manzil-calendar`,
+        'DTSTAMP:20260101T000000Z',
+        `DTSTART;VALUE=DATE:${start}`,
+        `DTEND;VALUE=DATE:${end}`,
+        'RRULE:FREQ=YEARLY',
+        `SUMMARY:${icsEscape(summary)}`,
+        `DESCRIPTION:${icsEscape(description)}`,
+        'TRANSP:TRANSPARENT',
+        // Reminders at 9 AM the day before and 9 AM on the day (Apple/Outlook honour these;
+        // Google uses the calendar's own notification settings instead)
+        'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsEscape(`Tomorrow: ${summary}`)}`, 'TRIGGER:-PT15H', 'END:VALARM',
+        'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsEscape(`Today: ${summary}`)}`, 'TRIGGER:PT9H', 'END:VALARM',
+        'END:VEVENT'
+    ];
+}
+
+function buildCalendar(birthdays, anniversaries) {
+    const lines = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Sajeena Manzil//Family Calendar//EN',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'X-WR-CALNAME:Sajeena Manzil Family',
+        'X-WR-CALDESC:Birthdays and wedding anniversaries of the Sajeena Manzil family',
+        'REFRESH-INTERVAL;VALUE=DURATION:P1D',
+        'X-PUBLISHED-TTL:P1D'
+    ];
+
+    for (const b of birthdays) {
+        lines.push(...icsEvent({
+            uid: `birthday-${slug(b.name)}`,
+            summary: `🎂 ${b.name}'s birthday`,
+            description: `${b.year ? `Born ${b.year}. ` : ''}${SITE_URL}`,
+            event: b
+        }));
+    }
+    for (const a of anniversaries) {
+        const names = a.partners ? a.partners.join(' & ') : a.couple.replace(/\s+and\s+/i, ' & ');
+        lines.push(...icsEvent({
+            uid: `anniversary-${slug(a.couple)}`,
+            summary: `💍 ${names}'s anniversary`,
+            description: `${a.year ? `Married ${a.year}. ` : ''}${SITE_URL}`,
+            event: a
+        }));
+    }
+
+    lines.push('END:VCALENDAR');
+    return lines.map(icsFold).join('\r\n') + '\r\n';
+}
+
 // ---------- Cross-checks ----------
 
 function validate(family, birthdays) {
@@ -272,7 +364,8 @@ if (typeof exports !== 'undefined') {
 `;
 
         fs.writeFileSync(OUTPUT, fileContent, 'utf8');
-        console.log(`Synchronized ${birthdays.length} birthdays, ${anniversaries.length} anniversaries and ${family.length} family members to data.js` +
+        fs.writeFileSync(path.join(__dirname, 'family.ics'), buildCalendar(birthdays, anniversaries), 'utf8');
+        console.log(`Synchronized ${birthdays.length} birthdays, ${anniversaries.length} anniversaries and ${family.length} family members to data.js and family.ics` +
             (warnings ? ` with ${warnings} warning(s).` : '.'));
     } catch (err) {
         console.error('Error during synchronization:', err.message || err);

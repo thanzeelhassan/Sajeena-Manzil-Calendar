@@ -1124,6 +1124,69 @@ body::after {
   white-space: nowrap;
 }
 
+/* Calendar subscription */
+.subscribe-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.subscribe-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: center;
+}
+
+.subscribe-title i {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-gold);
+  flex-shrink: 0;
+}
+
+.subscribe-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.subscribe-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.subscribe-btn i {
+  width: 16px;
+  height: 16px;
+}
+
+.subscribe-btn:hover {
+  border-color: var(--primary-gold);
+  color: var(--primary-gold);
+  background: var(--primary-gold-glow);
+}
+
+.subscribe-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
 /* Footer style */
 .main-footer {
   text-align: center;
