@@ -85,7 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const todayClean = clearTime(systemDate);
         const targetDate = getNextCelebrationDate(month, day);
         const diffTime = targetDate - todayClean;
-        return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        // Round (not ceil) so a daylight-saving hour change doesn't add a day
+        return Math.round(diffTime / (1000 * 60 * 60 * 24));
     }
 
     // Calculate milestone age/years married
@@ -677,6 +678,124 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    // --- Family Tree (built from FAMILY in data.js) ---
+
+    function escapeHTML(str) {
+        return String(str).replace(/[&<>"']/g, c => ({
+            "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+        })[c]);
+    }
+
+    function formatShortDate(ev) {
+        return `${MONTH_SHORT_NAMES[ev.month]} ${ev.day}${ev.year ? `, ${ev.year}` : ""}`;
+    }
+
+    function findAnniversary(a, b) {
+        return ANNIVERSARIES.find(ann =>
+            ann.partners ? ann.partners.includes(a) && ann.partners.includes(b)
+                         : ann.couple === `${a} and ${b}` || ann.couple === `${b} and ${a}`);
+    }
+
+    function treeNodeHTML(member, role, extraClass = "") {
+        const bday = BIRTHDAYS.find(b => b.name === member.name);
+        return `
+          <div class="node ${member.gender || ""} ${extraClass}">
+            ${role ? `<span class="node-role">${escapeHTML(role)}</span>` : ""}
+            <span class="node-name">${escapeHTML(member.name)}</span>
+            ${bday ? `<span class="node-date">B: ${formatShortDate(bday)}</span>` : ""}
+          </div>`;
+    }
+
+    function coupleCardHTML(person, spouse, roles = [], extraClass = "") {
+        const ann = findAnniversary(person.name, spouse.name);
+        let icon = "heart";
+        let title = "Married";
+        if (ann) {
+            const upcoming = ann.year && clearTime(systemDate) < new Date(ann.year, ann.month, ann.day);
+            if (upcoming) icon = "gem";
+            title = `${upcoming ? "Wedding" : "Married"}: ${MONTH_NAMES[ann.month]} ${ann.day}${ann.year ? `, ${ann.year}` : ""}`;
+        }
+        return `
+          <div class="couple-card ${extraClass}">
+            ${treeNodeHTML(person, roles[0])}
+            <div class="couple-heart" title="${escapeHTML(title)}"><i data-lucide="${icon}"></i></div>
+            ${treeNodeHTML(spouse, roles[1])}
+            ${ann ? `<span class="couple-date">${escapeHTML(title)}</span>` : ""}
+          </div>`;
+    }
+
+    function firstName(name) {
+        return name.split(" ")[0];
+    }
+
+    function renderFamilyTree() {
+        const container = document.getElementById("family-tree");
+        if (!container || typeof FAMILY === "undefined") return;
+
+        const byName = new Map(FAMILY.map(m => [m.name, m]));
+        const childrenOf = (parent) => FAMILY.filter(m => m.parents && m.parents.includes(parent.name));
+        const spouseOf = (m) => m.spouse ? byName.get(m.spouse) : null;
+        const levelLabels = { 1: "Grandparents", 2: "Children & Spouses", 3: "Grandchildren & Couples", 4: "Great-grandchildren" };
+
+        // Generation 1: the founding couple
+        const roots = FAMILY.filter(m => m.generation === 1);
+        const rootMale = roots.find(m => m.gender === "male") || roots[0];
+        const rootFemale = roots.find(m => m !== rootMale);
+
+        let html = `
+          <div class="tree-level level-1">
+            <div class="level-indicator">1st Generation (${levelLabels[1]})</div>
+            <div class="nodes-row">
+              ${rootFemale
+                ? coupleCardHTML(rootMale, rootFemale, ["Grandfather", "Grandmother"], "root-couple")
+                : treeNodeHTML(rootMale, "Grandparent")}
+            </div>
+          </div>`;
+
+        // Each further generation: the children of the previous generation's couples, grouped by parents
+        let parentsLevel = rootMale ? [rootMale] : [];
+        for (let gen = 2; parentsLevel.length; gen++) {
+            const nextParents = [];
+            const groups = parentsLevel.map(parent => {
+                const kids = childrenOf(parent);
+                if (!kids.length) return "";
+
+                const cards = kids.map(kid => {
+                    const spouse = spouseOf(kid);
+                    nextParents.push(kid);
+                    if (spouse) {
+                        const roles = gen === 2 ? [] : ["Grandchild", "Spouse"];
+                        const highlight = kid.name === "Sajeena Abdul Kalam" ? "highlight-card" : "";
+                        return coupleCardHTML(kid, spouse, roles, highlight);
+                    }
+                    return treeNodeHTML(kid, "", "children-node");
+                }).join("");
+
+                if (gen === 2) return cards;
+                const partner = spouseOf(parent);
+                const label = partner ? `${firstName(parent.name)} & ${partner.name}` : parent.name;
+                return `
+                  <div class="family-branch">
+                    <span class="group-label">Children of ${escapeHTML(label)}</span>
+                    <div class="single-nodes-row">${cards}</div>
+                  </div>`;
+            }).join("");
+
+            if (!groups.trim()) break;
+            const ordinal = getOrdinalIndicator(gen);
+            html += `
+              <div class="tree-branch-line"></div>
+              <div class="tree-level level-${gen}">
+                <div class="level-indicator">${ordinal} Generation (${levelLabels[gen] || "Descendants"})</div>
+                <div class="nodes-row flex-wrap">${groups}</div>
+              </div>`;
+            parentsLevel = nextParents;
+        }
+
+        container.innerHTML = html;
+        lucide.createIcons();
+    }
+
     // --- Theme Toggle Logic ---
     const themeToggleBtn = document.getElementById("theme-toggle");
     if (themeToggleBtn) {
@@ -694,4 +813,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderQuickCountdown();
     renderUpcomingEvents();
+    renderFamilyTree();
 });

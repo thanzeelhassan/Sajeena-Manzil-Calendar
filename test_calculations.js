@@ -1,6 +1,7 @@
-// test_calculations.js - Verify date math for Sajeena Manzil Family Calendar
+// test_calculations.js - Verify date math and data for Sajeena Manzil Family Calendar
+// Run with: node test_calculations.js   (exits with code 1 if anything fails)
 
-const { BIRTHDAYS, ANNIVERSARIES } = require('./data.js');
+const { BIRTHDAYS, ANNIVERSARIES, FAMILY } = require('./data.js');
 
 // Mock system date to July 18, 2026
 const systemDate = new Date(2026, 6, 18, 14, 21, 44);
@@ -24,7 +25,7 @@ function getDaysCount(month, day) {
     const todayClean = clearTime(systemDate);
     const targetDate = getNextCelebrationDate(month, day);
     const diffTime = targetDate - todayClean;
-    return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return Math.round(diffTime / (1000 * 60 * 60 * 24));
 }
 
 function getCalculatedYears(event) {
@@ -33,53 +34,82 @@ function getCalculatedYears(event) {
     return targetDate.getFullYear() - event.year;
 }
 
-// Run Tests
+// --- Tiny test harness ---
+let passed = 0;
+let failed = 0;
+
+function check(label, actual, expected) {
+    if (actual === expected) {
+        passed++;
+        console.log(`  PASS  ${label}: ${actual}`);
+    } else {
+        failed++;
+        console.error(`  FAIL  ${label}: got ${actual}, expected ${expected}`);
+    }
+}
+
+function find(list, key, value) {
+    const item = list.find(x => x[key] === value);
+    if (!item) {
+        failed++;
+        console.error(`  FAIL  record not found: ${key} = "${value}"`);
+    }
+    return item;
+}
+
 console.log("=== RUNNING FAMILY CALENDAR VERIFICATION ===");
-console.log(`Current Mock Time: ${systemDate.toString()}`);
-console.log(`Current Mock Clean Date: ${clearTime(systemDate).toString()}\n`);
+console.log(`Mock date: ${clearTime(systemDate).toDateString()}\n`);
 
-// Test 1: Check countdown to tomorrow's birthday (Faiha - July 19)
-const faiha = BIRTHDAYS.find(b => b.name === "Faiha Sameer");
-if (faiha) {
-    const days = getDaysCount(faiha.month, faiha.day);
-    console.log(`Test Faiha (July 19): countdown days = ${days} (Expected: 1)`);
-    if (days !== 1) console.error("Error: Faiha countdown mismatch!");
-}
+// Test 1: Countdown to tomorrow's birthday (Faiha - July 19)
+console.log("Faiha Sameer (July 19)");
+const faiha = find(BIRTHDAYS, "name", "Faiha Sameer");
+if (faiha) check("days until birthday", getDaysCount(faiha.month, faiha.day), 1);
 
-// Test 2: Check countdown to Sajeena & Kalam's anniversary (Sep 29th 1992)
-const sajeenaKalam = ANNIVERSARIES.find(a => a.couple === "Sajeena Abdul Kalam and Abdul Kalam");
+// Test 2: Sajeena & Kalam's anniversary (Sep 29, 1992)
+console.log("Sajeena & Kalam (Sep 29, 1992)");
+const sajeenaKalam = find(ANNIVERSARIES, "couple", "Sajeena Abdul Kalam and Abdul Kalam");
 if (sajeenaKalam) {
-    const days = getDaysCount(sajeenaKalam.month, sajeenaKalam.day);
-    const years = getCalculatedYears(sajeenaKalam);
-    console.log(`Test Sajeena & Kalam (Sep 29): countdown days = ${days}, years married = ${years} (Expected 34 in 2026)`);
-    if (years !== 34) console.error("Error: Sajeena & Kalam anniversary years calculation mismatch!");
+    check("days until anniversary", getDaysCount(sajeenaKalam.month, sajeenaKalam.day), 73);
+    check("years married", getCalculatedYears(sajeenaKalam), 34);
 }
 
-// Test 3: Check countdown to Samru & Farsana's upcoming wedding (July 26, 2026)
-const samruFarsana = ANNIVERSARIES.find(a => a.couple === "Mohamed Samroud and Farsana");
+// Test 3: Samru & Farsana's upcoming wedding (July 26, 2026)
+console.log("Samru & Farsana (July 26, 2026)");
+const samruFarsana = find(ANNIVERSARIES, "couple", "Mohamed Samroud and Farsana");
 if (samruFarsana) {
-    const days = getDaysCount(samruFarsana.month, samruFarsana.day);
-    const years = getCalculatedYears(samruFarsana);
-    console.log(`Test Samru & Farsana (July 26 2026): countdown days = ${days}, years calculated = ${years} (Expected: 8 days weight, years: 0)`);
-    if (days !== 8 || years !== 0) console.error("Error: Samru & Farsana wedding math mismatch!");
+    check("days until wedding", getDaysCount(samruFarsana.month, samruFarsana.day), 8);
+    check("years married", getCalculatedYears(samruFarsana), 0);
 }
 
-// Test 4: Check anniversary of Hassan Koya & Sulaika (June 30 1967) - has already passed this year (June 30, 2026)
-const hassanSulaika = ANNIVERSARIES.find(a => a.couple === "Hassan Koya and Sulaika Beeva");
+// Test 4: Hassan Koya & Sulaika (June 30, 1967) - already passed this year
+console.log("Hassan Koya & Sulaika (June 30, 1967)");
+const hassanSulaika = find(ANNIVERSARIES, "couple", "Hassan Koya and Sulaika Beevi");
 if (hassanSulaika) {
-    const days = getDaysCount(hassanSulaika.month, hassanSulaika.day);
-    const years = getCalculatedYears(hassanSulaika);
-    const nextCel = getNextCelebrationDate(hassanSulaika.month, hassanSulaika.day);
-    console.log(`Test Hassan Koya & Sulaika (June 30): next celebration = ${nextCel.toDateString()}, days = ${days}, celebrating anniversary # = ${years} (Expected: June 30 2027, years: 60)`);
+    check("next celebration", getNextCelebrationDate(hassanSulaika.month, hassanSulaika.day).toDateString(), "Wed Jun 30 2027");
+    check("anniversary number", getCalculatedYears(hassanSulaika), 60);
 }
 
-// Test 5: Check birthday of Isha (Jan 6 2018) - has already passed this year (Jan 6 2026)
-const isha = BIRTHDAYS.find(b => b.name === "Isha Nizar");
+// Test 5: Isha (Jan 6, 2018) - already passed this year
+console.log("Isha Nizar (Jan 6, 2018)");
+const isha = find(BIRTHDAYS, "name", "Isha Nizar");
 if (isha) {
-    const days = getDaysCount(isha.month, isha.day);
-    const age = getCalculatedYears(isha);
-    const nextCel = getNextCelebrationDate(isha.month, isha.day);
-    console.log(`Test Isha (Jan 6): next celebration = ${nextCel.toDateString()}, days = ${days}, turning age = ${age} (Expected: Jan 6 2027, age: 9)`);
+    check("next celebration", getNextCelebrationDate(isha.month, isha.day).toDateString(), "Wed Jan 06 2027");
+    check("turning age", getCalculatedYears(isha), 9);
 }
 
-console.log("\n=== ALL UNIT TESTS RUN COMPLETE ===");
+// Test 6: Data integrity between Members, Birthdays and Anniversaries
+console.log("Data integrity");
+const memberNames = new Set(FAMILY.map(m => m.name));
+const unknownBirthdays = BIRTHDAYS.filter(b => !memberNames.has(b.name)).map(b => b.name);
+check("birthdays with no matching family member", unknownBirthdays.join(", ") || "none", "none");
+const unresolved = ANNIVERSARIES.filter(a => !a.partners).map(a => a.couple);
+check("anniversaries not linked to a couple", unresolved.join(", ") || "none", "none");
+const brokenSpouses = FAMILY.filter(m => m.spouse && (!memberNames.has(m.spouse) ||
+    FAMILY.find(s => s.name === m.spouse).spouse !== m.name)).map(m => m.name);
+check("one-sided spouse links", brokenSpouses.join(", ") || "none", "none");
+check("grandchildren of Sajeena & Kalam",
+    FAMILY.filter(m => m.parents && m.parents.includes("Sajeena Abdul Kalam")).map(m => m.name).join(", "),
+    "Fatima Abdul Kalam, Mohamed Samroud");
+
+console.log(`\n=== ${passed} passed, ${failed} failed ===`);
+if (failed) process.exitCode = 1;
