@@ -623,18 +623,18 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260927
 DTEND;VALUE=DATE:20260928
 RRULE:FREQ=YEARLY
-SUMMARY:🎂 Abdullah Ahsan Nizar's birthday
+SUMMARY:🎂 Abdullah bin Ahsan's birthday
 DESCRIPTION:Born 2026. https://thanzeelhassan.github.io/Sajeena-Manzil-Cale
  ndar/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Tomorrow: 🎂 Abdullah Ahsan Nizar's birthday
+DESCRIPTION:Tomorrow: 🎂 Abdullah bin Ahsan's birthday
 TRIGGER:-PT15H
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Today: 🎂 Abdullah Ahsan Nizar's birthday
+DESCRIPTION:Today: 🎂 Abdullah bin Ahsan's birthday
 TRIGGER:PT9H
 END:VALARM
 END:VEVENT

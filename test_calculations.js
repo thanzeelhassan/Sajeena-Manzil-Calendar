@@ -120,7 +120,7 @@ check("day before Sajeena & Kalam's anniversary sends a reminder",
 check("anniversary day sends a forwardable greeting",
     msgsOn("2026-09-29")[0].startsWith("💍 *Happy 34th Wedding Anniversary, Sajeena Abdul Kalam & Abdul Kalam!*"), true);
 check("no greeting on the day a baby is born", msgsOn("2026-09-27").length, 0);
-check("first birthday a year later", /Happy Birthday, Abdullah Ahsan Nizar[\s\S]*1st birthday/.test(msgsOn("2027-09-27").join("\n")), true);
+check("first birthday a year later", /Happy Birthday, Abdullah bin Ahsan[\s\S]*1st birthday/.test(msgsOn("2027-09-27").join("\n")), true);
 check("upcoming wedding is a wedding, not an anniversary", /Congratulations, Mohamed Samroud & Farsana/.test(msgsOn("2026-07-26")[0]), true);
 check("India date used late evening in the US (Sep 29 11pm LA = Sep 30 India)",
     JSON.stringify(todayInIndia(new Date("2026-09-30T06:00:00Z"))), JSON.stringify({ year: 2026, month: 8, day: 30 }));

@@ -163,7 +163,7 @@ const BIRTHDAYS = [
     "year": 2019
   },
   {
-    "name": "Abdullah Ahsan Nizar",
+    "name": "Abdullah bin Ahsan",
     "month": 8,
     "day": 27,
     "year": 2026
@@ -563,7 +563,7 @@ const FAMILY = [
     "spouse": "Mohamed Samroud"
   },
   {
-    "name": "Abdullah Ahsan Nizar",
+    "name": "Abdullah bin Ahsan",
     "gender": "male",
     "generation": 4,
     "parents": [
